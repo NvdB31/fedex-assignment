@@ -24,7 +24,6 @@ export class PasswordValidatorComponent {
       this.hasLetterCasing = false;
       this.hasNoFirstOrLastName = true;
     }
-    console.log(this.hasMinCharacters, this.hasLetterCasing, this.hasNoFirstOrLastName)
     this.validateChange.emit(this.hasMinCharacters && this.hasLetterCasing && this.hasNoFirstOrLastName)
   }
 }

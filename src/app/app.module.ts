@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
 import { userReducer } from './store/user/user.reducer';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { AuthGuard } from './guards/auth.guard';
 
 
 // Components
@@ -47,7 +48,7 @@ import { SectionComponent } from './components/shared/section/section.component'
     StoreDevtoolsModule.instrument()
 
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
