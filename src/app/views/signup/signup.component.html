@@ -1,0 +1,86 @@
+<div class="flex flex-col h-screen w-screen">
+  <main
+    class="flex-grow flex w-full h-full sm:items-center justify-center sm:p-4"
+  >
+    <form
+      class="sm:border sm:rounded-2xl w-full sm:w-[480px] p-4 sm:p-12"
+      (ngSubmit)="handleSignup()"
+    >
+      <img
+        src="./assets/logo.svg"
+        alt="Fedex Logo"
+        class="w-[100px] mb-4 sm:mb-12"
+      />
+      <h1 class="font-bold text-primary text-xl sm:text-3xl mb-2 sm:mb-4">
+        Create an account
+      </h1>
+      <p class="text-gray-700 text-sm mb-2 sm:mb-4">
+        Fill in your details to start shipping today.
+      </p>
+      <div class="grid grid-cols-2 gap-4 sm:gap-6">
+        <app-text-input
+          label="First name*"
+          required
+          placeholder="Enter your first name"
+          [(value)]="firstName"
+          (input)="validateForm()"
+        ></app-text-input>
+        <app-text-input
+          label="Last name*"
+          placeholder="Enter your last name"
+          [(value)]="lastName"
+          (input)="validateForm()"
+          required
+        ></app-text-input>
+        <div class="col-span-2">
+          <app-text-input
+            label="Email*"
+            type="email"
+            required
+            placeholder="Enter your email"
+            [(value)]="email"
+            (input)="validateForm()"
+          ></app-text-input>
+          <app-email-validator
+            class="mt-2 block"
+            [email]="email"
+            *ngIf="email"
+            (validateChange)="isEmailValid = $event"
+          />
+        </div>
+        <app-text-input
+          label="Password*"
+          type="password"
+          class="col-span-2"
+          placeholder="Enter a password"
+          [(value)]="password"
+          (input)="validateForm()"
+          autocomplete="new-password"
+          required
+        >
+        </app-text-input>
+        <app-password-validator
+          class="col-span-2"
+          [password]="password"
+          [firstName]="firstName"
+          [lastName]="lastName"
+          (validateChange)="isPasswordValid = $event"
+          *ngIf="password"
+        />
+      </div>
+
+      <app-button
+        class="mt-4 sm:mt-8 block w-full"
+        type="submit"
+        [disabled]="!isFormValid || isLoading"
+        >{{ isLoading ? "Loading..." : "Continue" }}</app-button
+      >
+      <a
+        routerLink="/login"
+        class="text-center text-primary block mt-3 hover:underline text-sm"
+        >Already have an account? Log in here</a
+      >
+    </form>
+  </main>
+  <app-footer />
+</div>

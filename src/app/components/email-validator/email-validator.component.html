@@ -1,0 +1,11 @@
+<p
+  [class.text-orange-500]="!isValidEmail"
+  class="text-green-600 flex items-center gap-2 text-sm"
+>
+  <mat-icon
+    [fontIcon]="isValidEmail ? 'check' : 'report-problem'"
+    class="flex-none"
+  />{{
+    isValidEmail ? "Valid email address" : "Please provide a valid email adress"
+  }}
+</p>

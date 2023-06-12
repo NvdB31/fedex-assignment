@@ -1,0 +1,55 @@
+<div class="flex flex-col h-screen w-screen">
+  <app-navbar />
+  <div class="flex-grow w-screen">
+    <app-section>
+      <app-container>
+        <h1 class="text-4xl font-bold mb-12 text-primary">
+          Welcome {{ (user$ | async)?.firstName }}!
+        </h1>
+        <p class="w-1/2 mb-12 leading-relaxed text-lg">
+          Here's the details you've signed up with:
+        </p>
+        <div class="rounded-2xl p-4 sm:p-12 w-1/2 border">
+          <dl class="divide-y divide-gray-100">
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+              <dt class="text-sm font-medium leading-6 text-gray-900">
+                Full name
+              </dt>
+              <dd
+                class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+              >
+                {{ (user$ | async)?.firstName }} {{ (user$ | async)?.lastName }}
+              </dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+              <dt class="text-sm font-medium leading-6 text-gray-900">
+                User ID
+              </dt>
+              <dd
+                class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+              >
+                {{ (user$ | async)?.id }}
+              </dd>
+            </div>
+            <div class="px-4 py-6 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-0">
+              <dt class="text-sm font-medium leading-6 text-gray-900">
+                Email address
+              </dt>
+              <dd
+                class="mt-1 text-sm leading-6 text-gray-700 sm:col-span-2 sm:mt-0"
+              >
+                {{ (user$ | async)?.email }}
+              </dd>
+            </div>
+          </dl>
+        </div>
+        <div class="w-1/2 mt-12 leading-relaxed text-lg">
+          Thank you for checking out this demo! This is all for now, and I hope
+          you like what you've seen so far. 🙂 Make sure to check out the
+          README.md, where I explain what I've built and how I've built it.
+        </div>
+      </app-container>
+    </app-section>
+  </div>
+  <app-footer />
+</div>
