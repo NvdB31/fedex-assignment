@@ -1,6 +1,6 @@
-# Fexed Shipping Example Project - Signup Form with Angular
+# FedEx Shipping Example Project - Signup Form with Angular
 
-This example project demonstrates a simple signup form implementation using Angular. It includes form validation, custom components, and state management using NgRx.
+This example project demonstrates a simple signup form implementation using Angular. It includes form validation, custom components, and state management using NgRx. I've deployed a live demo using Vercel, which you can find here: https://fedex-demo.vercel.app/
 
 ## Project Structure
 
@@ -17,12 +17,12 @@ The project follows a basic folder structure:
 
 ## Functionality
 
-The example project implements a simple signup form where users can enter their first name, last name, email, and password. The form includes validation rules and displays error messages for invalid inputs.
+The example project implements a simple signup form where users can enter their first name, last name, email, and password. The form includes validation rules and displays error messages for invalid email and password inputs.
 
 Key features of the project:
 
 - Form validation: Validates input fields and displays error messages for invalid inputs.
-- Password validation: Validates the password based on specific criteria, such as minimum characters and letter casing.
+- Password validation: Validates the password based on the requested criteria, such as minimum characters and letter casing.
 - State management: Uses NgRx to manage the user state and dispatch actions when the form is submitted.
 - Routing: Includes basic routing to navigate between different pages/components.
 
@@ -41,7 +41,7 @@ To run the example project locally, follow these steps:
    ```shell
    ng serve
    ```
-6. Open a web browser and navigate to `http://localhost:4200` to view the application.
+6. Open a web browser and navigate to `http://localhost:4200/signup` to view the application.
 
 ## Unit Testing
 
@@ -71,4 +71,5 @@ This project is released under the [MIT License](LICENSE).
 ---
 
 Thank you for checking out this example project! If you have any questions or feedback, please don't hesitate to reach out.
+
 # fedex-assignment
