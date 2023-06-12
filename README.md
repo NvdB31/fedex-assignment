@@ -45,7 +45,7 @@ To run the example project locally, follow these steps:
 
 ## Unit Testing
 
-The project includes unit tests for some of the components and services. To run the unit tests, use the following command:
+The project includes unit tests for the `app-password-validator` component to ensure the validation criteria work correctly. To run the tests, use the following command:
 
 ```shell
 ng test
@@ -71,5 +71,3 @@ This project is released under the [MIT License](LICENSE).
 ---
 
 Thank you for checking out this example project! If you have any questions or feedback, please don't hesitate to reach out.
-
-# fedex-assignment
